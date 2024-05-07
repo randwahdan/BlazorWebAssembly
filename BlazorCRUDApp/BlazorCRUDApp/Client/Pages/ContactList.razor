@@ -1,0 +1,75 @@
+﻿@page "/contactlist"
+@using BlazorCRUDApp.Shared
+
+@inject HttpClient _httpClient
+
+<h1>Contact Detail</h1>
+<div class="mb-4">
+    <a href="/addcontact" class="btn btn-primary">Create New Contact</a>
+</div>
+<div class="input-group mb-3">
+    <span class="input-group-text visually visually-filter" style="cursor:pointer" @onclick="SortContactsByFirstName">Filter By First Name</span>
+    <span class="input-group-text visually visually-filter" style="cursor:pointer" @onclick="SortContactsByLastName">Filter By Last Name</span>
+</div>
+
+@if (contactList != null && contactList.Any())
+{
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col" width="30%">Name</th>
+                    <th scope="col" width="20%">Email</th>
+                    <th scope="col" width="20%">Phone Number</th>
+                    <th scope="col" width="30%">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var c in contactList)
+                {
+                    <tr>
+                        <td>@c.FirstName @c.LastName</td>
+                        <td>@c.Email</td>
+                        <td>@c.PhoneNumber</td>
+                        <td>
+                            <a href="/editcontact/@c.Id" class="btn btn-primary btn-sm">Edit</a>
+                            <a href="/deletecontact/@c.Id" class="btn btn-danger btn-sm" >Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <p>No contacts found.</p>
+}
+
+@code {
+    List<ContactViewModel> contactList = new List<ContactViewModel>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadContactList();
+    }
+
+    private async Task LoadContactList()
+    {
+        var response = await _httpClient.GetAsync("api/contact");
+        response.EnsureSuccessStatusCode();
+        contactList = await response.Content.ReadFromJsonAsync<List<ContactViewModel>>();
+    }
+
+   
+
+    private void SortContactsByFirstName()
+    {
+        contactList = contactList.OrderBy(c => c.FirstName).ToList();
+    }
+
+    private void SortContactsByLastName()
+    {
+        contactList = contactList.OrderBy(c => c.LastName).ToList();
+    }
+}

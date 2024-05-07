@@ -1,0 +1,309 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\rand_\\OneDrive\\Desktop\\p\\BlazorCRUDApp\\BlazorCRUDApp\\Server\\BlazorCRUDApp.Server.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\rand_\\OneDrive\\Desktop\\p\\BlazorCRUDApp\\BlazorCRUDApp\\Client\\BlazorCRUDApp.Client.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\rand_\\OneDrive\\Desktop\\p\\BlazorCRUDApp\\BlazorCRUDApp\\Client\\BlazorCRUDApp.Client.csproj",
+        "projectName": "BlazorCRUDApp.Client",
+        "projectPath": "C:\\Users\\rand_\\OneDrive\\Desktop\\p\\BlazorCRUDApp\\BlazorCRUDApp\\Client\\BlazorCRUDApp.Client.csproj",
+        "packagesPath": "C:\\Users\\rand_\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rand_\\OneDrive\\Desktop\\p\\BlazorCRUDApp\\BlazorCRUDApp\\Client\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\rand_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://packagesource": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\rand_\\OneDrive\\Desktop\\p\\BlazorCRUDApp\\BlazorCRUDApp\\Shared\\BlazorCRUDApp.Shared.csproj": {
+                "projectPath": "C:\\Users\\rand_\\OneDrive\\Desktop\\p\\BlazorCRUDApp\\BlazorCRUDApp\\Shared\\BlazorCRUDApp.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Components.WebAssembly": {
+              "target": "Package",
+              "version": "[6.0.0-rc.2.21480.10, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly.DevServer": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0-rc.2.21480.10, )"
+            },
+            "Microsoft.NET.ILLink.Analyzers": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.100-1.23211.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.100-1.23211.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.NET.Sdk.WebAssembly.Pack": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0-rc.2.23479.6, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.23, 6.0.23]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.23, 6.0.23]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
+              "version": "[6.0.23, 6.0.23]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.23, 6.0.23]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-rc.2.23502.2\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "browser-wasm": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\rand_\\OneDrive\\Desktop\\p\\BlazorCRUDApp\\BlazorCRUDApp\\Server\\BlazorCRUDApp.Server.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\rand_\\OneDrive\\Desktop\\p\\BlazorCRUDApp\\BlazorCRUDApp\\Server\\BlazorCRUDApp.Server.csproj",
+        "projectName": "BlazorCRUDApp.Server",
+        "projectPath": "C:\\Users\\rand_\\OneDrive\\Desktop\\p\\BlazorCRUDApp\\BlazorCRUDApp\\Server\\BlazorCRUDApp.Server.csproj",
+        "packagesPath": "C:\\Users\\rand_\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rand_\\OneDrive\\Desktop\\p\\BlazorCRUDApp\\BlazorCRUDApp\\Server\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\rand_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://packagesource": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\rand_\\OneDrive\\Desktop\\p\\BlazorCRUDApp\\BlazorCRUDApp\\Client\\BlazorCRUDApp.Client.csproj": {
+                "projectPath": "C:\\Users\\rand_\\OneDrive\\Desktop\\p\\BlazorCRUDApp\\BlazorCRUDApp\\Client\\BlazorCRUDApp.Client.csproj"
+              },
+              "C:\\Users\\rand_\\OneDrive\\Desktop\\p\\BlazorCRUDApp\\BlazorCRUDApp\\Shared\\BlazorCRUDApp.Shared.csproj": {
+                "projectPath": "C:\\Users\\rand_\\OneDrive\\Desktop\\p\\BlazorCRUDApp\\BlazorCRUDApp\\Shared\\BlazorCRUDApp.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Components.WebAssembly.Server": {
+              "target": "Package",
+              "version": "[6.0.0-rc.2.21480.10, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.23, 6.0.23]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.23, 6.0.23]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.23, 6.0.23]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.23, 6.0.23]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-rc.2.23502.2\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\rand_\\OneDrive\\Desktop\\p\\BlazorCRUDApp\\BlazorCRUDApp\\Shared\\BlazorCRUDApp.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\rand_\\OneDrive\\Desktop\\p\\BlazorCRUDApp\\BlazorCRUDApp\\Shared\\BlazorCRUDApp.Shared.csproj",
+        "projectName": "BlazorCRUDApp.Shared",
+        "projectPath": "C:\\Users\\rand_\\OneDrive\\Desktop\\p\\BlazorCRUDApp\\BlazorCRUDApp\\Shared\\BlazorCRUDApp.Shared.csproj",
+        "packagesPath": "C:\\Users\\rand_\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rand_\\OneDrive\\Desktop\\p\\BlazorCRUDApp\\BlazorCRUDApp\\Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\rand_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://packagesource": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.23, 6.0.23]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.23, 6.0.23]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.23, 6.0.23]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-rc.2.23502.2\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

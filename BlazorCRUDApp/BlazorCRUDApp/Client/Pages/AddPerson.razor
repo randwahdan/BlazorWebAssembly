@@ -1,0 +1,129 @@
+﻿@page "/addcontact"
+@using BlazorCRUDApp.Shared
+@using System.Text.RegularExpressions
+
+
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JsRuntime
+
+<h2>Add Contact</h2>
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="FirstName">First Name *</label>
+            <input form="FirstName" class="form-control" @bind="@contact.FirstName" />
+            <div class="text-danger">@errorFirstName</div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="LastName">Last Name *</label>
+            <input form="LastName" class="form-control" @bind="@contact.LastName" />
+            <div class="text-danger">@errorLastName</div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="Email">Email *</label>
+            <input form="Email" class="form-control" @bind="@contact.Email" />
+            <div class="text-danger">@errorEmail</div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="PhoneNumber">Phone Number *</label>
+            <input form="mobileNo" class="form-control" @bind="@contact.PhoneNumber" />
+            <div class="text-danger">@errorPhoneNumber</div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <button type="button" class="btn btn-primary" @onclick="@Save">Save</button>
+            <button type="button" class="btn btn-secondary" @onclick="@Cancel">Cancel</button>
+        </div>
+    </div>
+</div>
+@code {
+    ContactViewModel contact = new ContactViewModel();
+    string errorFirstName = "";
+    string errorLastName = "";
+    string errorEmail = "";
+    string errorPhoneNumber = "";
+
+    protected async Task Save()
+    {
+
+        errorFirstName = "";
+        errorLastName = "";
+        errorEmail = "";
+        errorPhoneNumber = "";
+
+        if (string.IsNullOrEmpty(contact.FirstName))
+        {
+            errorFirstName = "First Name is required.";
+        }
+        if (string.IsNullOrEmpty(contact.LastName))
+        {
+            errorLastName = "Last Name is required.";
+        }
+        if (string.IsNullOrEmpty(contact.Email))
+        {
+            errorEmail = "Email is required.";
+        }
+        if (string.IsNullOrEmpty(contact.PhoneNumber))
+        {
+            errorPhoneNumber = "Mobile No is required.";
+        }
+
+        if (!string.IsNullOrEmpty(errorFirstName) ||
+            !string.IsNullOrEmpty(errorLastName) ||
+            !string.IsNullOrEmpty(errorEmail) ||
+            !string.IsNullOrEmpty(errorPhoneNumber))
+        {
+            return;
+        }
+
+        if (!IsValidEmail(contact.Email))
+        {
+            errorEmail = "Invalid email format.";
+            return;
+        }
+        if (!IsValidPhoneNumber(contact.PhoneNumber))
+        {
+            errorPhoneNumber = "Invalid phone number format. It should contain exactly 10 digits.";
+            return;
+        }
+
+        var response = await Http.PostAsJsonAsync("api/Contact", @contact);
+        ContactViewModel contactResponse = await response.Content.ReadFromJsonAsync<ContactViewModel>();
+        if (contactResponse?.Id > 0)
+        {
+            await JsRuntime.InvokeVoidAsync("alert", "Saved Successfully!");
+            NavigationManager.NavigateTo("contactlist");
+        }
+    }
+
+    void Cancel()
+    {
+        NavigationManager.NavigateTo("contactlist");
+    }
+
+    bool IsValidEmail(string email)
+    {
+        string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+        Regex regex = new Regex(pattern);
+        return regex.IsMatch(email);
+    }
+    bool IsValidPhoneNumber(string phoneNumber)
+    {
+        // Regular expression pattern for phone number format validation
+        string pattern = @"^\d{10}$";
+        Regex regex = new Regex(pattern);
+        return regex.IsMatch(phoneNumber);
+    }
+}

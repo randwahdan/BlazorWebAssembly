@@ -1,0 +1,142 @@
+﻿@page "/editcontact/{Id}"
+@using BlazorCRUDApp.Shared
+@using System.Text.RegularExpressions
+
+
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JsRuntime
+
+<h2>Edit Contact</h2>
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="FirstName"> First Name *</label>
+            <input form="FirstName" class="form-control" @bind="@contact.FirstName" />
+            <div class="text-danger">@errorFirstName</div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="LastName"> Last Name *</label>
+            <input form="LastName" class="form-control" @bind="@contact.LastName" />
+            <div class="text-danger">@errorLastName</div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="Email"> Email *</label>
+            <input form="Email" class="form-control" @bind="@contact.Email" />
+            <div class="text-danger">@errorEmail</div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="PhoneNumber"> Phone Number *</label>
+            <input form="mobileNo" class="form-control" @bind="@contact.PhoneNumber" />
+            <div class="text-danger">@errorPhoneNumber</div>
+        </div>
+    </div>
+</div>
+<div class="row mt-2">
+    <div class="col-md-4 ">
+        <div class="form-group">
+            <input type="button" class="btn btn-primary" @onclick="@Save" value="Save" />
+            <input type="button" class="btn" @onclick="@Cancel" value="Cancel" />
+        </div>
+    </div>
+</div>
+@code {
+    [Parameter]
+    public string Id { get; set; }
+    ContactViewModel contact = new ContactViewModel();
+    string errorFirstName = "";
+    string errorLastName = "";
+    string errorEmail = "";
+    string errorPhoneNumber = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        contact = await Http.GetFromJsonAsync<ContactViewModel>("api/Contact/" + Id);
+    }
+    protected async Task Save()
+    {
+        // Reset error messages
+        errorFirstName = "";
+        errorLastName = "";
+        errorEmail = "";
+        errorPhoneNumber = "";
+
+        // Validate required fields
+        if (string.IsNullOrEmpty(contact.FirstName))
+        {
+            errorFirstName = "First Name is required.";
+        }
+        if (string.IsNullOrEmpty(contact.LastName))
+        {
+            errorLastName = "Last Name is required.";
+        }
+        if (string.IsNullOrEmpty(contact.Email))
+        {
+            errorEmail = "Email is required.";
+        }
+        if (string.IsNullOrEmpty(contact.PhoneNumber))
+        {
+            errorPhoneNumber = "Mobile No is required.";
+        }
+
+        // Check if any errors exist
+        if (!string.IsNullOrEmpty(errorFirstName) ||
+            !string.IsNullOrEmpty(errorLastName) ||
+            !string.IsNullOrEmpty(errorEmail) ||
+            !string.IsNullOrEmpty(errorPhoneNumber))
+        {
+            return; // Return if there are errors
+        }
+
+        // Validate email format
+        if (!IsValidEmail(contact.Email))
+        {
+            errorEmail = "Invalid email format.";
+            return;
+        }
+
+        if (!IsValidPhoneNumber(contact.PhoneNumber))
+        {
+            errorPhoneNumber = "Invalid phone number format. It should contain exactly 10 digits.";
+            return;
+        }
+
+        // If all validations pass, proceed with saving the contact
+        var response = await Http.PutAsJsonAsync("api/Contact/" + Id, @contact);
+        bool contactResponse = await response.Content.ReadFromJsonAsync<bool>();
+        if (contactResponse)
+        {
+            await JsRuntime.InvokeVoidAsync("alert", "Updated Successfully!");
+            NavigationManager.NavigateTo("contactlist");
+        }
+
+    }
+    void Cancel()
+    {
+        NavigationManager.NavigateTo("contactlist");
+    }
+
+    // Function to validate email format using regular expressions
+    bool IsValidEmail(string email)
+    {
+        // Regular expression pattern for email format validation
+        string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+        Regex regex = new Regex(pattern);
+        return regex.IsMatch(email);
+    }
+
+    // Function to validate phone number format (exactly 10 digits)
+    bool IsValidPhoneNumber(string phoneNumber)
+    {
+        // Regular expression pattern for phone number format validation
+        string pattern = @"^\d{10}$";
+        Regex regex = new Regex(pattern);
+        return regex.IsMatch(phoneNumber);
+    }
+}

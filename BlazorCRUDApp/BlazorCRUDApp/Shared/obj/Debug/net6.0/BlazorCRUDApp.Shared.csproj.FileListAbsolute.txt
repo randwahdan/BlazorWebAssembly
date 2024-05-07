@@ -1,0 +1,11 @@
+C:\Users\rand_\OneDrive\Desktop\p\BlazorCRUDApp\BlazorCRUDApp\Shared\bin\Debug\net6.0\BlazorCRUDApp.Shared.deps.json
+C:\Users\rand_\OneDrive\Desktop\p\BlazorCRUDApp\BlazorCRUDApp\Shared\bin\Debug\net6.0\BlazorCRUDApp.Shared.dll
+C:\Users\rand_\OneDrive\Desktop\p\BlazorCRUDApp\BlazorCRUDApp\Shared\bin\Debug\net6.0\BlazorCRUDApp.Shared.pdb
+C:\Users\rand_\OneDrive\Desktop\p\BlazorCRUDApp\BlazorCRUDApp\Shared\obj\Debug\net6.0\BlazorCRUDApp.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rand_\OneDrive\Desktop\p\BlazorCRUDApp\BlazorCRUDApp\Shared\obj\Debug\net6.0\BlazorCRUDApp.Shared.AssemblyInfoInputs.cache
+C:\Users\rand_\OneDrive\Desktop\p\BlazorCRUDApp\BlazorCRUDApp\Shared\obj\Debug\net6.0\BlazorCRUDApp.Shared.AssemblyInfo.cs
+C:\Users\rand_\OneDrive\Desktop\p\BlazorCRUDApp\BlazorCRUDApp\Shared\obj\Debug\net6.0\BlazorCRUDApp.Shared.csproj.CoreCompileInputs.cache
+C:\Users\rand_\OneDrive\Desktop\p\BlazorCRUDApp\BlazorCRUDApp\Shared\obj\Debug\net6.0\BlazorCRUDApp.Shared.dll
+C:\Users\rand_\OneDrive\Desktop\p\BlazorCRUDApp\BlazorCRUDApp\Shared\obj\Debug\net6.0\refint\BlazorCRUDApp.Shared.dll
+C:\Users\rand_\OneDrive\Desktop\p\BlazorCRUDApp\BlazorCRUDApp\Shared\obj\Debug\net6.0\BlazorCRUDApp.Shared.pdb
+C:\Users\rand_\OneDrive\Desktop\p\BlazorCRUDApp\BlazorCRUDApp\Shared\obj\Debug\net6.0\ref\BlazorCRUDApp.Shared.dll

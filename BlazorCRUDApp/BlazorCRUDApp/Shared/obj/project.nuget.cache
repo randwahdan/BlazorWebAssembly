@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "gYptUkZVJxLLPdsPwUtp0vJxgabK13+mT/FIyd4FZ9N4fs3TpVlJXzmeR5P5vCCp2DROuojQwUUeVCnADzqIJA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\rand_\\OneDrive\\Desktop\\p\\BlazorCRUDApp\\BlazorCRUDApp\\Shared\\BlazorCRUDApp.Shared.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rand_\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.23\\microsoft.windowsdesktop.app.ref.6.0.23.nupkg.sha512",
+    "C:\\Users\\rand_\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.23\\microsoft.netcore.app.ref.6.0.23.nupkg.sha512",
+    "C:\\Users\\rand_\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.23\\microsoft.aspnetcore.app.ref.6.0.23.nupkg.sha512"
+  ],
+  "logs": []
+}
